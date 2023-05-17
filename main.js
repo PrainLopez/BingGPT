@@ -5,6 +5,7 @@ const {
   dialog,
   ipcMain,
   Menu,
+  MenuItem,
   BrowserWindow,
 } = require('electron')
 const contextMenu = require('electron-context-menu')
@@ -228,9 +229,11 @@ const createWindow = () => {
     ],
   })
   // Load Bing
-  const bingUrl = `https://edgeservices.bing.com/edgediscover/query?&${
-    isDarkMode ? 'dark' : 'light'
-  }schemeovr=1&FORM=SHORUN&udscs=1&udsnav=1&setlang=${locale}&features=udssydinternal&clientscopes=windowheader,coauthor,chat,&udsframed=1`
+  // const bingUrl = `https://edgeservices.bing.com/edgediscover/query?&${
+  //   isDarkMode ? 'dark' : 'light'
+  // }schemeovr=1&FORM=SHORUN&udscs=1&udsnav=1&setlang=${locale}&features=udssydinternal&clientscopes=windowheader,coauthor,chat,&udsframed=1`
+  // const bingUrl = `https://www.bing.com/chat?cc=us`
+  const bingUrl = `https://www.bing.com/search?q=Bing+AI&showconv=1&rdr=1&setlang=zh-Hans&cc=us`
   const userAgent =
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.0.0'
   mainWindow.loadURL(bingUrl)
@@ -435,6 +438,83 @@ app.whenReady().then(() => {
   })
 })
 
+// 设置代理
+ipcMain.on('set_proxy', (event, arg) => {
+  console.log(arg)
+  var { http_proxy } = arg
+  mainWindow.webContents.session.setProxy({
+    proxyRules: http_proxy,
+    proxyBypassRules: 'localhost',
+  })
+})
+
+// 移除代理
+ipcMain.on('remove_proxy', (event, arg) => {
+  mainWindow.webContents.session.setProxy({})
+})
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
+
+
+app.on('ready', () => {
+  // 定义菜单模板
+  const template = [
+    {
+      label: '文件',
+      submenu: [
+        {
+          label: '新建'
+        },
+        {
+          label: '打开'
+        },
+        {
+          label: '保存'
+        }
+      ]
+    },
+    {
+      label: '编辑',
+      submenu: [
+        {
+          label: '撤销'
+        },
+        {
+          label: '重做'
+        }
+      ]
+    },
+    {
+      label: '视图',
+      submenu: [
+        {
+          label: '刷新'
+        },
+        {
+          label: '全屏'
+        }
+      ]
+    },
+    {
+      label: '工具',
+      submenu: [
+        // 添加代理设置菜单项
+        {
+          label: '代理设置',
+          // 添加点击事件处理函数
+          click() {
+            // 编写代理设置逻辑
+            console.log('点击了代理设置');
+          }
+        }
+      ]
+    }
+  ];
+
+  // 根据模板创建菜单实例
+  const menu = Menu.buildFromTemplate(template);
+  // 设置应用菜单
+  Menu.setApplicationMenu(menu);
+});
