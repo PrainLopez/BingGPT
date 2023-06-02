@@ -65,7 +65,7 @@ const createWindow = () => {
   // Get language
   const locale = app.getLocale() || 'en-US'
   // Hide main menu (Windows)
-  Menu.setApplicationMenu(null)
+  // Menu.setApplicationMenu(null)
   // Create context menu
   contextMenu({
     window: mainWindow.webContents,
@@ -232,6 +232,7 @@ const createWindow = () => {
   // const bingUrl = `https://edgeservices.bing.com/edgediscover/query?&${
   //   isDarkMode ? 'dark' : 'light'
   // }schemeovr=1&FORM=SHORUN&udscs=1&udsnav=1&setlang=${locale}&features=udssydinternal&clientscopes=windowheader,coauthor,chat,&udsframed=1`
+
   // const bingUrl = `https://www.bing.com/chat?cc=us`
   const bingUrl = `https://www.bing.com/search?q=Bing+AI&showconv=1&rdr=1&setlang=zh-Hans&cc=us`
   const userAgent =
@@ -510,11 +511,24 @@ app.on('ready', () => {
           }
         }
       ]
-    }
+    },
+    {
+      label: "Edit",
+      enabled: true,
+      submenu: [
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", enabled: true, selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+        { type: "separator" },
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+      ]}
   ];
 
   // 根据模板创建菜单实例
   const menu = Menu.buildFromTemplate(template);
+
   // 设置应用菜单
   Menu.setApplicationMenu(menu);
 });
