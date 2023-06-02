@@ -13,59 +13,18 @@
    </a>
 </p>
 
-## Install
+## 说明
+很显然，这是个fork。没空打包，请自行编译
 
-### Windows
+## 安装
+1. `git clone`
+2. `yarn install`
+3. `yarn run make`
 
-- [BingGPT-0.3.3-win32-x64-Setup.exe](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-win32-x64-Setup.exe) (Installer)
-- [BingGPT-0.3.3-win32-x64.zip](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-win32-x64.zip) (Portable)
-- [BingGPT-0.3.3-win32-arm64-Setup.exe](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-win32-arm64-Setup.exe) (Installer)
-- [BingGPT-0.3.3-win32-arm64.zip](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-win32-arm64.zip) (Portable)
+## 此fork试图解决的问题
+1. 解决白屏问题
+2. 解决复制粘贴快捷键问题
 
-### macOS
-
-- [BingGPT-0.3.3-darwin-arm64.dmg](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-darwin-arm64.dmg) (Apple Silicon)
-- [BingGPT-0.3.3-darwin-x64.dmg](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-darwin-x64.dmg) (Intel chips)
-
-### Linux
-
-- [BingGPT-0.3.3-linux-x64.deb](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-linux-x64.deb)
-- [BingGPT-0.3.3-linux-arm64.deb](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-linux-arm64.deb)
-- [BingGPT-0.3.3-linux-x64.rpm](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-linux-x64.rpm)
-- [BingGPT-0.3.3-linux-arm64.rpm](https://github.com/dice2o/BingGPT/releases/download/v0.3.3/BingGPT-0.3.3-linux-arm64.rpm)
-
-## Usage
-
-- Get access to the early preview of new Bing - [Join the waitlist](https://www.bing.com/new)
-- Sign in to your Microsoft account
-- Start chatting
-
-**Note: VPN is required if new Bing is not available in your area. Make sure `bing.com` and its subdomains are included in proxy rules.**
-
-## Features
-
-- Chat with new Bing without installing Microsoft Edge or browser plugins
-- Export full conversation to Markdown, PNG or PDF
-- Customize appearance (theme & font size)
-- Keyboard shortcuts
-- Multi-platform
-
-## Shortcuts
-
-| Action            | Shortcut                                        |
-| ----------------- | ----------------------------------------------- |
-| New topic         | <kbd>Ctrl/Cmd</kbd> + <kbd>N</kbd>              |
-| Switch tone       | <kbd>Ctrl/Cmd</kbd> + <kbd><</kbd> <kbd>></kbd> |
-| Quick reply       | <kbd>Ctrl/Cmd</kbd> + <kbd>Number</kbd>         |
-| Focus on textarea | <kbd>Ctrl/Cmd</kbd> + <kbd>I</kbd>              |
-| Stop responding   | <kbd>Ctrl/Cmd</kbd> + <kbd>S</kbd>              |
-| Always on top     | <kbd>Ctrl/Cmd</kbd> + <kbd>T</kbd>              |
-| Reload            | <kbd>Ctrl/Cmd</kbd> + <kbd>R</kbd>              |
-| Set font size     | <kbd>Ctrl/Cmd</kbd> + <kbd>+</kbd> <kbd>-</kbd> |
-
-<kbd>Ctrl</kbd> - Windows and Linux
-
-<kbd>Cmd(⌘)</kbd> - macOS
 
 ## Screenshot
 

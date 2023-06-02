@@ -220,7 +220,7 @@ const createWindow = () => {
         },
       },
       {
-        label: 'BingGPT v0.3.3',
+        label: 'BingGPT v1.0.0',
         visible: parameters.selectionText.trim().length === 0,
         click: () => {
           shell.openExternal('https://github.com/dice2o/BingGPT/releases')
