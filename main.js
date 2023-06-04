@@ -6,8 +6,10 @@ const {
   ipcMain,
   Menu,
   MenuItem,
+  session,
   BrowserWindow,
 } = require('electron')
+
 const contextMenu = require('electron-context-menu')
 const Store = require('electron-store')
 const path = require('path')
@@ -285,6 +287,34 @@ const createWindow = () => {
       callback({ requestHeaders: details.requestHeaders, cancel: false })
     }
   )
+
+  session.defaultSession.cookies.get({
+    url: "https://www.bing.com",
+    name: "_EDGE_S"
+  }).then(c => {
+      if (c.length === 1) {
+        let ck = c[0]
+        ck.value = ck.value.replace(/^(mkt=zh-CN&)/,"");
+      }
+    }
+  )
+
+
+  session.defaultSession.cookies.get({
+    url: "https://www.bing.com"
+  }).then(ck => {
+        console.log(ck)
+      }
+  )
+
+  // const cookie = { url: 'http://www.bing.com', name: '_EDGE_S', value: 'dummy' }
+  // session.defaultSession.cookies.set(cookie)
+  //     .then(() => {
+  //       // success
+  //     }, (error) => {
+  //       console.error(error)
+  //     })
+
   // Always on top
   const alwaysOnTopHandler = () => {
     config.set('alwaysOnTop', !mainWindow.isAlwaysOnTop())
