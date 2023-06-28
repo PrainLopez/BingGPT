@@ -49,12 +49,12 @@ const createWindow = () => {
     icon: 'icon.png',
     width: 601,
     height: 800,
-    titleBarStyle: 'hidden',
-    titleBarOverlay: true,
-    titleBarOverlay: {
-      color: isDarkMode ? '#3b3b3b' : '#ffffff',
-      symbolColor: isDarkMode ? '#f3f3f3' : '#2b2b2b',
-    },
+    // titleBarStyle: 'hidden',
+    // titleBarOverlay: true,
+    // titleBarOverlay: {
+    //   color: isDarkMode ? '#3b3b3b' : '#ffffff',
+    //   symbolColor: isDarkMode ? '#f3f3f3' : '#2b2b2b',
+    // },
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       devTools: false,
