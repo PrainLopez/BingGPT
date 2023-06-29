@@ -560,5 +560,5 @@ app.on('ready', () => {
   // const menu = Menu.buildFromTemplate(template);
 
   // 设置应用菜单
-  Menu.setApplicationMenu(menu);
+  // Menu.setApplicationMenu(menu);
 });
