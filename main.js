@@ -68,7 +68,7 @@ const createWindow = () => {
   // Get language
   const locale = app.getLocale() || 'en-US'
   // Hide main menu (Windows)
-  // Menu.setApplicationMenu(null)
+  Menu.setApplicationMenu(null)
   // Create context menu
   contextMenu({
     window: mainWindow.webContents,
@@ -558,7 +558,7 @@ app.on('ready', () => {
   ];
 
   // 根据模板创建菜单实例
-  // const menu = Menu.buildFromTemplate(template);
+  const menu = Menu.buildFromTemplate(template);
 
   // 设置应用菜单
   // Menu.setApplicationMenu(menu);
