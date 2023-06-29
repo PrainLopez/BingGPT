@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# IDEs and editors
+/.idea
+/.vscode
+
 # production
 /out
 
