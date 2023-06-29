@@ -49,6 +49,7 @@ const createWindow = () => {
     icon: 'icon.png',
     width: 601,
     height: 800,
+    menuBarVisible: false,
     // titleBarStyle: 'hidden',
     // titleBarOverlay: true,
     // titleBarOverlay: {
