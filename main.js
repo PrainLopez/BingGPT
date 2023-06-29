@@ -557,7 +557,7 @@ app.on('ready', () => {
   ];
 
   // 根据模板创建菜单实例
-  const menu = Menu.buildFromTemplate(template);
+  // const menu = Menu.buildFromTemplate(template);
 
   // 设置应用菜单
   Menu.setApplicationMenu(menu);
