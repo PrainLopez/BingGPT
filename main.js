@@ -284,7 +284,7 @@ const createWindow = () => {
   mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
     (details, callback) => {
       details.requestHeaders['User-Agent'] = userAgent
-      details.requestHeaders['X-Forwarded-For'] = '1.1.1.1'
+      details.requestHeaders['X-Forwarded-For'] = '104.166.126.199'
       callback({ requestHeaders: details.requestHeaders, cancel: false })
     }
   )
